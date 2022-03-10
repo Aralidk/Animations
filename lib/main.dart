@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage>{
         ),
         body: Center(
           child: //multipleButton()
-          scale(),
+          //scale(),
           //animationController(),
               //kutuSayfa(),
               //PlayButton(onPressed: () {  },),
