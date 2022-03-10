@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/flip.dart';
+import 'package:untitled/multipleButton.dart';
 import 'package:untitled/playbutton.dart';
 import 'kutu.dart';
 import 'buton.dart';
 import 'dart:math';
+import 'opacity.dart';
+import 'scaleAnimation.dart';
 
 void main() {
   runApp(SliderApp());
@@ -23,7 +26,8 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>{
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         body: Center(
-          child:
-              //
-          kutuSayfa(),
+          child: //multipleButton()
+          scale(),
+          //animationController(),
+              //kutuSayfa(),
               //PlayButton(onPressed: () {  },),
           //flip(),
           //buton(go: () {  },cancel: (){},),
           ),
-
-
         );
   }
 }
