@@ -1,3 +1,17 @@
+
+Kat Sayısı Slider 
+
+https://user-images.githubusercontent.com/69721692/158080163-7b4ac951-806b-4520-881c-50ecc140009a.mp4
+
+
+Kat Sayısı Buton
+
+https://user-images.githubusercontent.com/69721692/158080181-040c9017-982b-442e-a21b-ea00c867b10f.mp4
+
+
+Kat Sayısı -> Araştırma yaparken denk geldim, hoşunuza gidebilir veya fikir verebilir. https://freefluttersource.com/a-flutter-stepper-widget-with-nice-aniamtion/
+
+
 Animated Container
 
 https://user-images.githubusercontent.com/69721692/157654615-3d18d742-5fc3-424c-a535-22d7493c40d8.mp4
