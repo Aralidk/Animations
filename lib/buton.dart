@@ -20,54 +20,56 @@ class _butonState extends State<buton> {
   @override
   Widget build(BuildContext context) {
     handleSize = (widget.height! - (widget.borderWidth! * 2));
-    return LayoutBuilder(builder: (context, constraint) {
-      maxWidth = constraint.maxWidth;
-      return AnimatedContainer(
-          duration: Duration(milliseconds: 100),
-          height: widget.height,
-          decoration: BoxDecoration(
-            color: _go ? Colors.white : Colors.blueGrey,
-            borderRadius: BorderRadius.circular(50),
-            border: Border.all(
+    return Scaffold(
+      body: Center ( child : LayoutBuilder(builder: (context, constraint) {
+        maxWidth = constraint.maxWidth;
+        return AnimatedContainer(
+            duration: Duration(milliseconds: 100),
+            height: widget.height,
+            decoration: BoxDecoration(
               color: _go ? Colors.white : Colors.blueGrey,
-              width: widget.borderWidth!,
+              borderRadius: BorderRadius.circular(50),
+              border: Border.all(
+                color: _go ? Colors.white : Colors.blueGrey,
+                width: widget.borderWidth!,
+              ),
             ),
-          ),
-          child: Center(
-            child: Stack(
-              children: [ Text(_go ? "Başlatıldı" : "Başlatmak için çekiniz",
-                  style: TextStyle(
-                        color: _go ? Colors.black54 : Colors.white,
-                    fontSize: 15
-                  ) ),
-            AnimatedContainer(
-                duration: Duration(milliseconds: 100),
-                width: dragWidth <= handleSize ? handleSize : dragWidth,
-                child: Row(
-                  children: [
-                    Expanded(child: SizedBox.shrink()),
-                    GestureDetector(
-                      onVerticalDragUpdate: onDragUpdate,
-                      onVerticalDragEnd: onDragEnd,
-                      child: Container(
-                        width: handleSize,
-                        height: handleSize,
-                        decoration: BoxDecoration(
-                          color: Colors.indigo,
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: Icon(
-                          Icons.keyboard_arrow_right_rounded,
-                          color: Colors.white,
-                          size: 40,
+            child: Center(
+              child: Stack(
+                children: [ Text(_go ? "Başlatıldı" : "Başlatmak için çekiniz",
+                    style: TextStyle(
+                          color: _go ? Colors.black54 : Colors.white,
+                      fontSize: 15
+                    ) ),
+              AnimatedContainer(
+                  duration: Duration(milliseconds: 100),
+                  width: dragWidth <= handleSize ? handleSize : dragWidth,
+                  child: Row(
+                    children: [
+                      Expanded(child: SizedBox.shrink()),
+                      GestureDetector(
+                        onVerticalDragUpdate: onDragUpdate,
+                        onVerticalDragEnd: onDragEnd,
+                        child: Container(
+                          width: handleSize,
+                          height: handleSize,
+                          decoration: BoxDecoration(
+                            color: Colors.indigo,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Icon(
+                            Icons.keyboard_arrow_right_rounded,
+                            color: Colors.white,
+                            size: 40,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-            )]),
-          ));
-    });
+                    ],
+                  ),
+              )]),
+            ));
+      }),
+      ) );
   }
 
 

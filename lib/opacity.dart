@@ -30,18 +30,22 @@ class _animationControllerState extends State<animationController>
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: animationValue.value,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(primary: Colors.orange, shape: CircleBorder(),
-        fixedSize: Size(150, 150)),
-          onPressed: () {
-          controller.forward();
-          },
-          child: Text(
-            "Ekle",
-            style: TextStyle(color: Colors.black, fontSize: 20),
-          )),
+    return Scaffold(
+      body: Center(
+        child: Opacity(
+          opacity: animationValue.value,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(primary: Colors.orange, shape: CircleBorder(),
+            fixedSize: Size(150, 150)),
+              onPressed: () {
+              controller.forward();
+              },
+              child: Text(
+                "Ekle",
+                style: TextStyle(color: Colors.black, fontSize: 20),
+              )),
+        ),
+      ),
     );
   }
 }

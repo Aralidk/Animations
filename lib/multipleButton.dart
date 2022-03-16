@@ -31,53 +31,57 @@ class _multipleButtonState extends State<multipleButton> with TickerProviderStat
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Transform.scale(
-          scale: ScaleValue.value,
-          child: FloatingActionButton(
-            backgroundColor: Colors.orange,
-            onPressed: () {},
-            tooltip: "Dosya Ekle",
-            child: Icon(Icons.document_scanner),
-          ),
-        ),
-        Transform.scale(
-          scale: ScaleValue.value,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: FloatingActionButton(
-              backgroundColor: Colors.cyan,
-              onPressed: () {},
-              tooltip: "Resim Ekle",
-              child: Icon(Icons.photo_camera),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Transform.scale(
+              scale: ScaleValue.value,
+              child: FloatingActionButton(
+                backgroundColor: Colors.orange,
+                onPressed: () {},
+                tooltip: "Dosya Ekle",
+                child: Icon(Icons.document_scanner),
+              ),
             ),
-          ),
-        ),
-        Transform.rotate(
-          angle: RotateValue.value,
-          child: FloatingActionButton(
-            backgroundColor: Colors.lightGreen,
-            onPressed: () {
-              if(condition == true){
-                controller.reverse();
-                condition = false;
-              }
-              else{
-                controller.forward();
-                condition = true;
-              }
-            },
-            tooltip: "Ekle",
-            child: AnimatedIcon(
-              progress: controller,
-              icon: AnimatedIcons.menu_close
+            Transform.scale(
+              scale: ScaleValue.value,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FloatingActionButton(
+                  backgroundColor: Colors.cyan,
+                  onPressed: () {},
+                  tooltip: "Resim Ekle",
+                  child: Icon(Icons.photo_camera),
+                ),
+              ),
+            ),
+            Transform.rotate(
+              angle: RotateValue.value,
+              child: FloatingActionButton(
+                backgroundColor: Colors.lightGreen,
+                onPressed: () {
+                  if(condition == true){
+                    controller.reverse();
+                    condition = false;
+                  }
+                  else{
+                    controller.forward();
+                    condition = true;
+                  }
+                },
+                tooltip: "Ekle",
+                child: AnimatedIcon(
+                  progress: controller,
+                  icon: AnimatedIcons.menu_close
 
-            ),
-          ),
-        )
-      ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

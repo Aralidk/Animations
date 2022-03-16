@@ -70,7 +70,6 @@ class _kutuState extends State<kutu> with TickerProviderStateMixin {
               max: 100,
               onChanged: (Color) {
                 sliderController.forward();
-                sliderController.forward();
                 if (sliderValue.value == 60) {
                   sliderController.reverse();
                 }

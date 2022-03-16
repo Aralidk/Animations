@@ -35,19 +35,23 @@ class _scaleState extends State<scale>
 
   @override
   Widget build(BuildContext context) {
-    return Transform.rotate(
-      angle: rotateValue.value,
-      child: ElevatedButton(
-          style: ElevatedButton.styleFrom(primary: Colors.orange, shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),topRight: Radius.circular(30))),
-            fixedSize: Size(scaleValue.value, scaleValue.value)
+    return Scaffold(
+      body: Center(
+        child: Transform.rotate(
+            angle: rotateValue.value,
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.orange, shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),topRight: Radius.circular(30))),
+                  fixedSize: Size(scaleValue.value, scaleValue.value)
+                ),
+                onPressed: () {
+                  controller.repeat(reverse: true);
+                },
+                child: Text(
+                  "Ekle",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                )),
           ),
-          onPressed: () {
-            controller.repeat(reverse: true);
-          },
-          child: Text(
-            "Ekle",
-            style: TextStyle(color: Colors.black, fontSize: 20),
-          )),
+        ),
     );
   }
 }
